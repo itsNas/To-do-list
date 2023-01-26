@@ -1,9 +1,9 @@
 {
-  "name": "webpack-boilerplate",
-  "version": "3.0.2",
-  "description": "Sensible webpack 5 boilerplate using Babel and PostCSS.",
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "A to do list app for The Odin Project",
   "main": "index.js",
-  "author": "Tania Rascia",
+  "author": "Nasrullah Bensaloji",
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:taniarascia/webpack-boilerplate"
+    "url": "https://github.com/nasrul-o7/To-do-list"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
