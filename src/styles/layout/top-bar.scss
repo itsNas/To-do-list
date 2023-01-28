@@ -1,0 +1,28 @@
+.top_bar {
+  @include flex(row, center, space-between);
+  padding: 1rem;
+  background-color: $color-primary-dark;
+  color: $font-color;
+}
+
+.top_bar .left_control {
+  @include flex(row, center, space-between);
+  gap: 1rem;
+}
+
+.top_bar .right_control {
+  @include flex(row, center, space-between);
+  gap: 1rem;
+}
+
+.burger_menu_toggle,
+.home_btn,
+.dark_mode,
+.username {
+  //   display: none;
+  //   width: 40px;
+  padding: 0;
+  background-color: $color-primary-dark;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

@@ -1,0 +1,43 @@
+.app_holder {
+  display: flex;
+}
+
+.left_menu {
+  width: 300px;
+  min-width: 250px;
+  height: 100vh;
+  padding: 20px;
+  background-color: $color-secondary-light;
+}
+
+.left_menu_top {
+  @include flex(column, flex-start, center);
+}
+
+.project_btn {
+  background-color: $color-secondary-light;
+  text-align: left;
+  width: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.project_btn:hover {
+  background-color: $color-primary-light;
+}
+
+.project_menu {
+  @include flex(row, center, space-between);
+}
+
+.add_btn {
+  background-color: $color-secondary-light;
+  text-align: left;
+  //   width: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.add_btn:hover {
+  background-color: $color-primary-light;
+}
