@@ -89,3 +89,19 @@
 .btn_cancel_project:hover {
   background-color: #f5b2b2;
 }
+
+.btn_project_list {
+  @include flex(row, center, space-between);
+  gap: 2rem;
+  background-color: $color-secondary-light;
+}
+
+.btn_del_list {
+  background-color: $color-secondary-light;
+  text-align: center;
+  font-size: $font-size-medium;
+  width: 2.5rem;
+  padding: 0.1rem;
+  cursor: pointer;
+  text-align: right;
+}

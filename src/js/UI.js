@@ -63,14 +63,17 @@ export default class UI {
 
   static createProjectListButton(name) {
     const projectListBtn = document.createElement('button')
-    projectListBtn.classList.add('project_list_btn')
+    projectListBtn.classList.add('btn_project_list')
 
-    const nameBtn = document.createElement('button')
+    const nameSpan = document.createElement('span')
     const delBtn = document.createElement('button')
-    nameBtn.innerHTML = `${name}`
+
+    nameSpan.classList.add('project_name_span')
+    delBtn.classList.add('btn_del_list')
+    nameSpan.innerHTML = `${name}`
     delBtn.innerHTML = 'X'
 
-    projectListBtn.appendChild(nameBtn)
+    projectListBtn.appendChild(nameSpan)
     projectListBtn.appendChild(delBtn)
     return projectListBtn
   }
