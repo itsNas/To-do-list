@@ -30,14 +30,62 @@
   @include flex(row, center, space-between);
 }
 
-.add_btn {
+.btn_add {
   background-color: $color-secondary-light;
-  text-align: left;
-  //   width: 100%;
+  text-align: center;
+  font-size: $font-size-medium;
+  width: 3rem;
   padding: 0.5rem;
   cursor: pointer;
 }
 
-.add_btn:hover {
+.btn_add.active {
+  display: none;
+}
+
+.btn_add:hover {
   background-color: $color-primary-light;
+}
+
+.add_project_popup {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.add_project_popup.active {
+  display: block;
+}
+
+.input_add_project {
+  border: 1px solid #aaa;
+  margin-bottom: 10px;
+}
+
+.add_project_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.btn_add_project {
+  border: 1px solid #99dd99;
+  background-color: #aaffaa;
+  font-weight: bold;
+}
+
+.btn_cancel_project {
+  border: 1px solid #eeadad;
+  background-color: #ffbebe;
+  font-weight: bold;
+}
+
+.btn_add_project:hover {
+  background-color: #a6f0a6;
+}
+
+.btn_cancel_project:hover {
+  background-color: #f5b2b2;
 }
