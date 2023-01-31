@@ -106,7 +106,7 @@ export default class UI {
     const userProject = document.querySelector('.project_list')
 
     userProject.appendChild(UI.createProjectListButton(projectName))
-    // UI.initAddProjectButton()
+    // UI.initProjectButton()
   }
 
   static createProjectListButton(name) {
@@ -129,7 +129,7 @@ export default class UI {
     const userTask = document.querySelector('.task_list')
 
     userTask.appendChild(UI.createTaskListButton(taskName, dueDate))
-    // UI.initAddTaskButton()
+    UI.initTaskButton()
   }
 
   static createTaskListButton(name, date) {
@@ -152,6 +152,8 @@ export default class UI {
   // Project event listener
 
   // Task event listener
-
+  static initTaskButton() {
+    const taskButtons = document.querySelectorAll('.btn_task_list')
+  }
   // Load content
 }
