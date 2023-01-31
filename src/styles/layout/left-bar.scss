@@ -92,8 +92,10 @@
 
 .btn_project_list {
   @include flex(row, center, space-between);
-  gap: 2rem;
   background-color: $color-secondary-light;
+  font-size: $font-size-medium;
+  padding: 0.5rem;
+  width: 100%;
 }
 
 .btn_del_list {
@@ -103,5 +105,9 @@
   width: 2.5rem;
   padding: 0.1rem;
   cursor: pointer;
-  text-align: right;
+  text-align: center;
+}
+
+.btn_project_list:hover {
+  background-color: $color-primary-light;
 }
