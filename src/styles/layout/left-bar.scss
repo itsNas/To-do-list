@@ -10,6 +10,7 @@
   background-color: $color-secondary-light;
 }
 
+// left menu top section
 .left_menu_top {
   @include flex(column, flex-start, center);
 }
@@ -30,6 +31,7 @@
   @include flex(row, center, space-between);
 }
 
+// Add project section
 .btn_add {
   background-color: $color-secondary-light;
   text-align: center;
@@ -90,12 +92,7 @@
   background-color: #f5b2b2;
 }
 
-.add_task_popup {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-}
+// Project list section
 .btn_project_list {
   @include flex(row, center, space-between);
   background-color: $color-secondary-light;
@@ -116,6 +113,14 @@
 
 .btn_project_list:hover {
   background-color: $color-primary-light;
+}
+
+// tasks list section
+.add_task_popup {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
 }
 
 .add_task_popup.active {
@@ -154,6 +159,7 @@
   background-color: #f5b2b2;
 }
 
+// add list section
 .btn_add_list {
   background-color: $color-primary-light;
   text-align: center;
