@@ -59,24 +59,31 @@ export default class UI {
     const userProject = document.querySelector('.project_list')
 
     userProject.appendChild(UI.createProjectListButton(projectName))
+    // UI.initAddProjectButton()
   }
 
   static createProjectListButton(name) {
     const projectListBtn = document.createElement('button')
-    projectListBtn.classList.add('btn_project_list')
-
     const nameSpan = document.createElement('span')
     const delBtn = document.createElement('button')
 
+    projectListBtn.classList.add('btn_project_list')
     nameSpan.classList.add('project_name_span')
     delBtn.classList.add('btn_del_list')
     nameSpan.innerHTML = `${name}`
-    delBtn.innerHTML = 'X'
+    delBtn.innerHTML = 'x'
 
     projectListBtn.appendChild(nameSpan)
     projectListBtn.appendChild(delBtn)
     return projectListBtn
   }
+
+  // static createTask(name, dueDate) {
+  //   const userProject = document.querySelector('.project_list')
+
+  //   userProject.appendChild(UI.createProjectListButton(projectName))
+  //   // UI.initAddProjectButton()
+  // }
 
   //  Load content
 }
