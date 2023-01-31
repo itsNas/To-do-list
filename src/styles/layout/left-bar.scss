@@ -90,6 +90,12 @@
   background-color: #f5b2b2;
 }
 
+.add_task_popup {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
 .btn_project_list {
   @include flex(row, center, space-between);
   background-color: $color-secondary-light;
@@ -109,5 +115,62 @@
 }
 
 .btn_project_list:hover {
+  background-color: $color-primary-light;
+}
+
+.add_task_popup.active {
+  display: block;
+}
+
+.input_add_task {
+  border: 1px solid #aaa;
+  margin-bottom: 10px;
+}
+
+.add_task_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.btn_add_task {
+  border: 1px solid #99dd99;
+  background-color: #aaffaa;
+  font-weight: bold;
+}
+
+.btn_cancel_task {
+  border: 1px solid #eeadad;
+  background-color: #ffbebe;
+  font-weight: bold;
+}
+
+.btn_add_task:hover {
+  background-color: #a6f0a6;
+}
+
+.btn_cancel_task:hover {
+  background-color: #f5b2b2;
+}
+
+.btn_add_list {
+  background-color: $color-primary-light;
+  text-align: center;
+  font-size: $font-size-small;
+  width: 120px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.btn_add_list.active {
+  display: none;
+}
+
+.btn_add_list:hover {
+  background-color: $color-secondary-light;
+}
+
+.project_preview {
   background-color: $color-primary-light;
 }
