@@ -107,13 +107,13 @@ export default class UI {
   static createProject(projectName) {
     const userProjects = document.querySelector('.project_list')
     userProjects.innerHTML += ` 
-      <button class="button-project" data-project-button>
-        <div class="left-project-panel">
-          <i class="fas fa-tasks"></i>
+      <button class="button_project" data_project_button>
+        <div class="left_project_panel">
+          <p class="fas fa_tasks"></p>
           <span>${projectName}</span>
         </div>
-        <div class="right-project-panel">
-          <i class="fas fa-times"></i>
+        <div class="right_project_panel">
+          <p class="fas fa_times">x</p>
         </div>
       </button>`
 
