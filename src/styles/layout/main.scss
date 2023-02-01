@@ -2,3 +2,155 @@
   width: 900px;
   padding: 20px 40px;
 }
+
+// add tasks list section
+.add_task_popup {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.add_task_popup.active {
+  display: block;
+}
+
+.input_add_task {
+  border: 1px solid #aaa;
+  margin-bottom: 10px;
+}
+
+.add_task_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.btn_add_task {
+  border: 1px solid #99dd99;
+  background-color: #aaffaa;
+  font-weight: bold;
+}
+
+.btn_cancel_task {
+  border: 1px solid #eeadad;
+  background-color: #ffbebe;
+  font-weight: bold;
+}
+
+.btn_add_task:hover {
+  background-color: #a6f0a6;
+}
+
+.btn_cancel_task:hover {
+  background-color: #f5b2b2;
+}
+
+// add list section
+.btn_add_list {
+  background-color: $color-primary-light;
+  text-align: center;
+  font-size: $font-size-small;
+  width: 120px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.btn_add_list.active {
+  display: none;
+}
+
+.btn_add_list:hover {
+  background-color: $color-secondary-light;
+}
+
+.project_preview {
+  background-color: $color-primary-light;
+}
+
+// task button section
+.button_task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: $color-primary-light;
+  cursor: default;
+}
+
+.button_task:hover {
+  background-color: $color-secondary-light;
+}
+
+.left_task_panel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fa_circle {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.task_content {
+  cursor: pointer;
+}
+
+.task_content.active {
+  display: none;
+}
+
+.input_task_name {
+  display: none;
+  height: 24px;
+  padding: 5px;
+  border: 1px solid #555;
+  background-color: var(--primary-light);
+  color: inherit;
+  font-family: inherit;
+}
+
+.input_task_name.active {
+  display: block;
+}
+
+.right_task_panel {
+  display: flex;
+  align-items: center;
+}
+
+.due_date {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.due_date.active {
+  display: none;
+}
+
+.input_due_date {
+  display: none;
+  height: 24px;
+  padding: 5px;
+  border: 1px solid #555;
+  margin: 0 10px;
+  background-color: var(--primary-light);
+  color: inherit;
+  font-family: inherit;
+}
+
+.input-due-date.active {
+  display: block;
+}
+
+.button_task .right_task_panel .fas {
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.button_task:hover .right_task_panel .fas {
+  visibility: visible;
+  font-weight: bolder;
+}

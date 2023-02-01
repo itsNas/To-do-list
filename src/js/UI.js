@@ -1,3 +1,5 @@
+// import { format } from 'date-fns'
+
 export default class UI {
   // Add project event listener
   static initAddProjectButton() {
@@ -103,57 +105,43 @@ export default class UI {
 
   // Create content
   static createProject(projectName) {
-    const userProject = document.querySelector('.project_list')
+    const userProjects = document.querySelector('.project_list')
+    userProjects.innerHTML += ` 
+      <button class="button-project" data-project-button>
+        <div class="left-project-panel">
+          <i class="fas fa-tasks"></i>
+          <span>${projectName}</span>
+        </div>
+        <div class="right-project-panel">
+          <i class="fas fa-times"></i>
+        </div>
+      </button>`
 
-    userProject.appendChild(UI.createProjectListButton(projectName))
-    // UI.initProjectButton()
-  }
-
-  static createProjectListButton(name) {
-    const projectListBtn = document.createElement('button')
-    const nameSpan = document.createElement('span')
-    const delBtn = document.createElement('button')
-
-    projectListBtn.classList.add('btn_project_list')
-    nameSpan.classList.add('project_name_span')
-    delBtn.classList.add('btn_del_list')
-    nameSpan.innerHTML = `${name}`
-    delBtn.innerHTML = 'x'
-
-    projectListBtn.appendChild(nameSpan)
-    projectListBtn.appendChild(delBtn)
-    return projectListBtn
+    // UI.initProjectButtons()
   }
 
   static createTask(taskName, dueDate) {
-    const userTask = document.querySelector('.task_list')
+    const userTasks = document.querySelector('.task_list')
+    userTasks.innerHTML += `
+    <button class="button_task" data-task-button>
+      <div class="left_task_panel">
+        <p class="far fa_circle">O</p>
+        <p class="task_content">${taskName}</p>
+        <input type="text" class="input_task_name" data-input-task-name>
+      </div>
+      <div class="right_task_panel">
+        <p class="due_date" id="due-date">${dueDate}</p>
+        <input type="date" class="input_due_date" data-input-due-date>
+        <p class="fas fa_times">x</p>
+      </div>
+    </button>`
 
-    userTask.appendChild(UI.createTaskListButton(taskName, dueDate))
-    UI.initTaskButton()
-  }
-
-  static createTaskListButton(name, date) {
-    const taskListBtn = document.createElement('button')
-    const taskNameSpan = document.createElement('span')
-    const taskDateInput = document.createElement('input')
-
-    taskListBtn.classList.add('btn_task_list')
-    taskNameSpan.classList.add('task_name_span')
-    taskDateInput.classList.add('input_task_date')
-    taskNameSpan.innerHTML = `${name}`
-    taskDateInput.type = 'date'
-    taskDateInput.value = date
-
-    taskListBtn.appendChild(taskNameSpan)
-    taskListBtn.appendChild(taskDateInput)
-    return taskListBtn
+    // UI.initTaskButtons()
   }
 
   // Project event listener
 
   // Task event listener
-  static initTaskButton() {
-    const taskButtons = document.querySelectorAll('.btn_task_list')
-  }
+
   // Load content
 }
