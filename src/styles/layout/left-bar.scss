@@ -15,7 +15,8 @@
   @include flex(column, flex-start, center);
 }
 
-.project_btn {
+.btn_project_today,
+.btn_project_week {
   background-color: $color-secondary-light;
   text-align: left;
   width: 100%;
@@ -23,7 +24,8 @@
   cursor: pointer;
 }
 
-.project_btn:hover {
+.btn_project_today:hover,
+.btn_project_week:hover {
   background-color: $color-primary-light;
 }
 
