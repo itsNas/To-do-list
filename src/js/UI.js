@@ -107,7 +107,7 @@ export default class UI {
   static createProject(projectName) {
     const userProjects = document.querySelector('.project_list')
     userProjects.innerHTML += ` 
-      <button class="button_project" data_project_button>
+      <button class="button_project" data-project-button>
         <div class="left_project_panel">
           <p class="fas fa_tasks"></p>
           <span>${projectName}</span>
@@ -140,6 +140,38 @@ export default class UI {
   }
 
   // Project event listener
+  static initProjectButtons() {
+    const todayProjectsButton = document.getElementById('btn_project_today')
+    const weekProjectsButton = document.getElementById('btn_project_week')
+    const projectButtons = document.querySelectorAll('[data-project-button]')
+
+    todayProjectsButton.addEventListener('click', UI.openTodayTasks)
+    weekProjectsButton.addEventListener('click', UI.openWeekTasks)
+    projectButtons.forEach((projectButton) =>
+      projectButton.addEventListener('click', UI.handleProjectButton)
+    )
+  }
+
+  static openTodayTasks() {
+    // Storage.updateTodayProject()
+    UI.openAddProjectPopup('Today', this)
+  }
+
+  static openWeekTasks() {
+    // Storage.updateWeekProject()
+    UI.openProject('This week', this)
+  }
+
+  static handleProjectButton(e) {
+    const projectName = this.children[0].children[1].textContent
+
+    if (e.target.classList.contains('fa_times')) {
+      UI.deleteProject(projectName, this)
+      return
+    }
+
+    UI.openProject(projectName, this)
+  }
 
   // Task event listener
 
