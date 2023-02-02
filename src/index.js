@@ -3,3 +3,4 @@ import '@/styles/index.scss'
 
 document.addEventListener('DOMContentLoaded', UI.initAddTaskButton)
 document.addEventListener('DOMContentLoaded', UI.initAddProjectButton)
+document.addEventListener('DOMContentLoaded', UI.initProjectButtons)

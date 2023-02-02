@@ -117,7 +117,7 @@ export default class UI {
         </div>
       </button>`
 
-    // UI.initProjectButtons()
+    UI.initProjectButtons()
   }
 
   static createTask(taskName, dueDate) {
@@ -139,10 +139,57 @@ export default class UI {
     // UI.initTaskButtons()
   }
 
+  static clear() {
+    UI.clearProjectPreview()
+    UI.clearProjects()
+    UI.clearTasks()
+  }
+
+  static clearProjectPreview() {
+    const projectPreview = document.querySelector('.project_preview')
+    projectPreview.textContent = ''
+  }
+
+  static clearProjects() {
+    const projectsList = document.querySelector('.projects_list')
+    projectsList.textContent = ''
+  }
+
+  static clearTasks() {
+    const tasksList = document.querySelector('.tasks-list')
+    tasksList.textContent = ''
+  }
+
+  static closeAllPopups() {
+    UI.closeAddProjectPopup()
+    if (document.querySelector('btn_add_list')) {
+      UI.closeAddTaskPopup()
+    }
+    if (
+      document.querySelector('tasks_list') &&
+      document.querySelector('tasks_list').innerHTML !== ''
+    ) {
+      UI.closeAllInputs()
+    }
+  }
+
+  static closeAllInputs() {
+    const taskButtons = document.querySelectorAll('[data-task-button]')
+
+    taskButtons.forEach((button) => {
+      UI.closeRenameInput(button)
+      UI.closeSetDateInput(button)
+    })
+  }
+
+  static handleKeyboardInput(e) {
+    if (e.key === 'Escape') UI.closeAllPopups()
+  }
+
   // Project event listener
   static initProjectButtons() {
-    const todayProjectsButton = document.getElementById('btn_project_today')
-    const weekProjectsButton = document.getElementById('btn_project_week')
+    const todayProjectsButton = document.querySelector('#btn_project_today')
+    const weekProjectsButton = document.querySelector('#btn_project_week')
     const projectButtons = document.querySelectorAll('[data-project-button]')
 
     todayProjectsButton.addEventListener('click', UI.openTodayTasks)
@@ -154,7 +201,7 @@ export default class UI {
 
   static openTodayTasks() {
     // Storage.updateTodayProject()
-    UI.openAddProjectPopup('Today', this)
+    UI.openProject('Today', this)
   }
 
   static openWeekTasks() {
@@ -173,7 +220,19 @@ export default class UI {
     UI.openProject(projectName, this)
   }
 
+  static openProject(projectName, projectButton) {
+    const defaultProjectButtons = document.querySelectorAll('.btn_default_project')
+    const projectButtons = document.querySelectorAll('.button_project')
+    const buttons = [...defaultProjectButtons, ...projectButtons]
+
+    buttons.forEach((button) => button.classList.remove('active'))
+    projectButton.classList.add('active')
+    UI.closeAddProjectPopup()
+    UI.loadProjectContent(projectName)
+  }
+
   // Task event listener
 
   // Load content
+  static loadProjectContent() {}
 }
