@@ -151,7 +151,7 @@ export default class UI {
   }
 
   static clearProjects() {
-    const projectsList = document.querySelector('.projects_list')
+    const projectsList = document.querySelector('.project_list')
     projectsList.textContent = ''
   }
 
@@ -229,6 +229,10 @@ export default class UI {
     projectButton.classList.add('active')
     UI.closeAddProjectPopup()
     UI.loadProjectContent(projectName)
+  }
+
+  static deleteProject() {
+    UI.clearProjects()
   }
 
   // Task event listener
