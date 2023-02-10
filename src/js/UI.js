@@ -18,7 +18,7 @@ export default class UI {
     const addProjectPopup = document.querySelector('.add_project_popup')
     const btnAdd = document.querySelector('.btn_add')
 
-    // UI.closeAllPopups()
+    UI.closeAllPopups()
     addProjectPopup.classList.add('active')
     btnAdd.classList.add('active')
   }
@@ -42,7 +42,7 @@ export default class UI {
       return
     }
 
-    // methods for storage
+    //* methods for storage
 
     UI.createProject(projectName)
     UI.closeAddProjectPopup()
@@ -69,7 +69,7 @@ export default class UI {
     const addTaskPopup = document.querySelector('.add_task_popup')
     const btnAddList = document.querySelector('.btn_add_list')
 
-    // UI.closeAllPopups()
+    UI.closeAllPopups()
     addTaskPopup.classList.add('active')
     btnAddList.classList.add('active')
   }
@@ -93,7 +93,7 @@ export default class UI {
       return
     }
 
-    // methods for storage
+    //* methods for storage
 
     UI.createTask(taskName)
     UI.closeAddTaskPopup()
@@ -200,12 +200,12 @@ export default class UI {
   }
 
   static openTodayTasks() {
-    // Storage.updateTodayProject()
+    //* Storage.updateTodayProject()
     UI.openProject('Today', this)
   }
 
   static openWeekTasks() {
-    // Storage.updateWeekProject()
+    //* Storage.updateWeekProject()
     UI.openProject('This week', this)
   }
 
@@ -395,5 +395,58 @@ export default class UI {
   }
 
   // Load content
-  static loadProjectContent() {}
+  static loadHomepage() {
+    UI.loadProjects()
+    UI.initProjectButtons()
+  }
+
+  static loadProjects() {
+    UI.initAddProjectButton()
+  }
+
+  static loadTasks(projectName) {
+    // Storage.getTodoList()
+    //   .getProject(projectName)
+    //   .getTasks()
+    //   .forEach((task) => UI.createTask(task.name, task.dueDate))
+
+    if (projectName !== 'Today' && projectName !== 'This week') {
+      UI.initAddTaskButtons()
+    }
+  }
+
+  static loadProjectContent(projectName) {
+    const projectPreview = document.getElementById('project-preview')
+    projectPreview.innerHTML = `
+        <h1 id="project-name">${projectName}</h1>
+        <div class="tasks-list" id="tasks-list"></div>`
+
+    if (projectName !== 'Today' && projectName !== 'This week') {
+      projectPreview.innerHTML += `
+        <button class="button-add-task" id="button-add-task">
+          <i class="fas fa-plus"></i>
+          Add Task
+        </button>
+        <div class="add-task-popup" id="add-task-popup">
+          <input
+            class="input-add-task-popup"
+            id="input-add-task-popup"
+            type="text"
+          />
+          <div class="add-task-popup-buttons">
+            <button class="button-add-task-popup" id="button-add-task-popup">
+              Add
+            </button>
+            <button
+              class="button-cancel-task-popup"
+              id="button-cancel-task-popup"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>`
+    }
+
+    UI.loadTasks(projectName)
+  }
 }
