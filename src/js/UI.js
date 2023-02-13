@@ -100,7 +100,7 @@ export default class UI {
   }
 
   static handleAddTaskPopupInput(e) {
-    if (e.key === 'Enter') UI.addProject()
+    if (e.key === 'Enter') UI.addTask()
   }
 
   // Create content
@@ -416,7 +416,7 @@ export default class UI {
   }
 
   static loadProjectContent(projectName) {
-    const projectPreview = document.getElementById('project-preview')
+    const projectPreview = document.querySelector('project_preview')
     projectPreview.innerHTML = `
         <h1 id="project-name">${projectName}</h1>
         <div class="tasks-list" id="tasks-list"></div>`
